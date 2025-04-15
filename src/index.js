@@ -6,8 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode></React.StrictMode>
+  <React.StrictMode>
     <App />
+  </React.StrictMode>
 );
   // let url = `https://dummyjson.com/products?limit=500`; //pegination
   // const url = `https://dummyjson.com/recipes/search?q=${Input}` auto serach
