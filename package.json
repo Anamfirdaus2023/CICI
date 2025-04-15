@@ -1,7 +1,7 @@
 {
   "name": "react-app",
+  "homepage": "https://services.namlsoft.com/cicd/react-app/",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
