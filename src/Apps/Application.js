@@ -71,9 +71,9 @@ if (countDown && count > 0) {
 
     return (
         <div className='container w-1/2 mx-auto'>
-            <div className="flex items-center justify-between p-2 bg-primary">
+            <div className="flex items-center justify-between p-2 bg-green-200">
                 <h2 className='w-[40px] flex justify-center items-center p-2 bg-black text-white rounded-full'>{count}</h2>
-            <h2 className=' bg-primary text-white  text-2xl font-bold  text-center'>Managing App.</h2>
+            <h2 className='  text-black  text-2xl font-bold  text-center'>Managing App CICD.</h2>
             <button className=' bg-red-500 px-2 py-1 shadow-md text-white text-[12px] min-w-[75px]' onClick={()=>setCountDown(true)} >Start</button>
 
             </div>
