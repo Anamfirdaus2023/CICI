@@ -8,7 +8,7 @@ export default function RoutesContainer() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/cicd/react-app/' element={<Home />} />
       </Routes>
     </BrowserRouter>
   )
