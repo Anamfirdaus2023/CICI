@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}  
           script: |
-            cd /home/bitnami/services-namlsoft/cicd/react-app
+            cd /home/bitnami/services-namlsoft/cicd/react-app/
             git pull origin main
             npm install
             npm run build
