@@ -78,8 +78,8 @@ console.log(memoizeFunction)
   return (
     <div className='container w-1/2 mx-auto'>
       <div className="bg-primary px-2 py-3 flex items-center justify-between">
-        <h6></h6>
-        <h6></h6>
+<p></p>
+<p></p>
 
   <h2 className="text-white text-2xl font-bold text-center">AutoScroll App.</h2>
   <input type="text" className="border p-2" placeholder="Search..."  onChange={(e)=>setSearch(e.target.value)}/>
@@ -120,7 +120,7 @@ const ProductCard = ({imageUrl,title,desc,brand,isStock,price})=>{
             </div>
             <div className='relative flex-1'>
                 <div className="flex justify-between items-center mb-3">
-                    <h6></h6>
+               <p></p>
                 <h6 className='text-black text-sm font-semibold'> {brand} </h6>
                 <h6 className='text-black text-sm font-semibold'>$ {price} </h6>
 
