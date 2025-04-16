@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main  #  branch name
+      - main  # The branch to deploy from, typically 'main'
 
 jobs:
   deploy:
@@ -13,14 +13,26 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@master      
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          host: ${{ secrets.SERVER_HOST }}    
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}  
+          node-version: '16'  # Use the version of Node.js you want to work with
+
+      - name: Install dependencies
+        run: npm install  # Install dependencies based on package.json
+
+      - name: Build production-ready app
+        run: npm run build  # This will create the production build in the build/ directory
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}    #  server IP in GitHub Secrets
+          username: ${{ secrets.SERVER_USER }} #  SSH username in GitHub Secrets
+          key: ${{ secrets.SERVER_SSH_KEY }}   #  SSH private key in GitHub Secrets
           script: |
-            cd /home/bitnami/services-namlsoft/cicd/react-app/
-            git pull origin main
-            npm install
-            npm run build
+            #  we're in the right directory where the production build should go
+            rm -rf /home/bitnami/services-namlsoft/cicd/react-app/build/*  # Clear old build files
+            scp -r ./build/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/bitnami/services-namlsoft/cicd/react-app/build/  # Copy the new build files
+            # You can also restart your web server or service here if necessary (e.g., Nginx or Apache)
+            sudo systemctl restart nginx  # Restart Nginx to apply the new build (if using Nginx)
