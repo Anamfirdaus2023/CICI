@@ -73,6 +73,10 @@ jobs:
           source: "build/*"
           target: "/home/bitnami/services-namlsoft/cicd/react-app"
 
+
+
+
+          
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
         with:
