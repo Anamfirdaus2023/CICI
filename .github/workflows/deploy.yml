@@ -78,6 +78,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIHrsXElao7DxTMaJF5Z/095qNNTicyplGIyCOYozkmSG9wb+Z3x2EuhsP3qssdm0BxnNVhc/pxvvxJqHXvDU1Ph0f2gmw7ae2ebgcJkyfgAj8JjbF1eLqK1AKHFmLStDCrhmiOiSW46iuG9J7dsQuXNNKkn0Uui9P0FFAfv+ruhbyiVlSXvzqkL+C69ARZdYf2ssaVoZ9S+13LBSJhy6+t+dRpnydmyaXw5eJTm+M4R/A0AbGDjv8GzGkpxebR+bkK7SCp/nl2KmSTTRBx4E+N+PAwgBg8bEt2WlXFvmZ7mItQ09+dPMTfvO6Fqas+3pV9n7zz1ukH9hphN5Z3TNm/OvDi384fS+TqUyNEvEKCyjq6m8ututZVM0JFsWIUOxGByBRBPbPAPChKjRiX9poj/KCgLCn5cE2LlFsEDFLOJ4H8NBw6kvKbSAEy9qZp7N7QN/gKA6Yzd2E5nvT9NbhIr8oeqV2GMSXhsyqmIZJwHoFaANMk8WN7Bn5OSmFqAGxdGqokCyDKmNFe3l/8Yyd+DfwIv0CuvdQogkYI4x5v9mlddOJR0gYfeUiStgPWtyMwaLEwrnxbwcAaW7d5zL457IqJY3Rw1X9x0VrnYLFyPZFPWp+cciPzb5+m2V/TdDcQfjMlItfTHvkWUi4DDPpJNFHefu+g2ZP1CQ1amRcAQ== github-to-server
+
           script: |
             sudo systemctl restart nginx
