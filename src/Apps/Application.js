@@ -36,6 +36,16 @@ const Application = () => {
                 level: 0,
                 time: 60,
             }
+        },{
+            id: 3,
+            name: '3 BHK',
+            imgUrl: 'https://react2eb4af6.onrender.com/imgs/00.png',
+            metaData: {
+                price: 20,
+                rent: 6,
+                level: 0,
+                time: 60,
+            }
         }
     ]
 
